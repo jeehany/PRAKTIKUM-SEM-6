@@ -68,8 +68,10 @@
                     </x-slot>
                 </x-dropdown>
 
-                <a href="" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-house">
-                    </i>Beranda</a>
+                <a href="dashboard" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-house-fill me-1">
+                    </i> Beranda</a>
+                <a href="products" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-box-fill me-1">
+                    </i> Produk</a>
 
             </nav>
         </div>
