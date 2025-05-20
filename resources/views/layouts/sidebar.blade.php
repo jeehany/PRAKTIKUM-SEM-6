@@ -72,6 +72,8 @@
                     </i> Beranda</a>
                 <a href="products" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-box me-1">
                     </i> Produk</a>
+                <a href="categories" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-tags me-1">
+                    </i> Kategori</a>
 
             </nav>
         </div>
