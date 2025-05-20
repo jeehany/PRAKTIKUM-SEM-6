@@ -32,7 +32,7 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $category->name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-900 flex gap-2">
                                 <a href="{{ route('categories.show', $category->id) }}"
-                                    class="text-gray-600 hover:text-gray-800" title="Detail">
+                                    class="text-yellow-600 hover:text-yellow-800" title="Show">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 <a href="{{ route('categories.edit', $category->id) }}"
