@@ -9,7 +9,7 @@
     <div class="mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                <i class="bi bi-box text-blue-500"></i> Daftar Produk
+                <i class="bi bi-box me-1"></i> Daftar Produk
             </h1>
             <a href="{{ route('products.create') }}"
                 class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700">
@@ -50,6 +50,10 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $product->stock }}</td>
                             <td class="px-6 py-8 flex items-center gap-2">
                                 <!-- Tombol Edit -->
+                                <a href="{{ route('products.show', $product->id) }}"
+                                    class="text-yellow-600 hover:text-yellow-800" title="Lihat">
+                                    <i class="bi bi-eye"></i>
+                                </a>
                                 <a href="{{ route('products.edit', $product->id) }}"
                                     class="text-blue-600 hover:text-blue-800" title="Edit">
                                     <i class="bi bi-pencil-square"></i>
