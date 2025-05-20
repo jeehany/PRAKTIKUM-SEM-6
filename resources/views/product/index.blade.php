@@ -50,6 +50,11 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $product->stock }}</td>
                             <td class="px-6 py-8 flex items-center gap-2">
                                 <!-- Tombol Edit -->
+                                <a href="{{ route('products.show', $product->id) }}"
+                                    class="text-yellow-600 hover:text-yellow-800" title="Show">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+
                                 <a href="{{ route('products.edit', $product->id) }}"
                                     class="text-blue-600 hover:text-blue-800" title="Edit">
                                     <i class="bi bi-pencil-square"></i>
