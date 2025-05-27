@@ -17,6 +17,7 @@
                     <tr>
                         <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">No</th>
                         <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Nama</th>
+                        <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Deskripsi</th>
                         <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Aksi</th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <tr class="hover:bg-gray-50">
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $index + 1 }}</td>
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $unit->name }}</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">{{ $unit->description }}</td>
                             <td class="px-6 py-4 flex gap-2">
                                 <a href="{{ route('units.show', $unit->id) }}" title="Show"
                                     class="text-yellow-600 hover:text-yellow-800">
@@ -34,19 +36,31 @@
                                     class="text-blue-600 hover:text-blue-800">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <form action="{{ route('units.destroy', $unit->id) }}" method="POST"
+
+                                <button type="button" class="text-red-600 hover:text-red-800" title="Hapus"
+                                    onclick="deleteUnit({{ $unit->id }})">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                                <form id="delete-form-{{ $unit->id }}"
+                                    action="{{ route('units.destroy', $unit->id) }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                                {{-- <form action="{{ route('units.destroy', $unit->id) }}" method="POST"
                                     onsubmit="return confirm('Yakin ingin menghapus unit ini?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-red-600 hover:text-red-800" title="Hapus">
                                         <i class="bi bi-trash"></i>
                                     </button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3" class="text-center text-gray-500 px-6 py-4">Tidak ada data unit.</td>
+                            <td colspan="4" class="text-center text-gray-500 px-6 py-4">Tidak ada data unit.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -57,4 +71,39 @@
             {{ $units->links() }}
         </div>
     </div>
+
+    <script>
+        function deleteUnit(unitId) {
+            Swal.fire({
+                title: 'Yakin ingin menghapus unit ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete-form-' + unitId).submit();
+                }
+            });
+        }
+        // Jika data berhasil ditambahkan
+        @if (session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @elseif (session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: "{{ session('error') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @endif
+    </script>
 </x-app-layout>

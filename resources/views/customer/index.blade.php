@@ -48,10 +48,6 @@
                                     @csrf
                                     @method('DELETE')
                                 </form>
-                                {{-- <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
-                                    @csrf @method('DELETE')
-                                    <button class="text-red-600 hover:underline">Hapus</button>
-                                </form> --}}
                             </td>
                         </tr>
                     @endforeach

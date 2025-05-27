@@ -17,10 +17,14 @@
                 @enderror
             </div>
 
-            <div class="flex justify-end">
+            <div class="flex justify-end gap-2">
                 <a href="{{ route('categories.index') }}"
-                    class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Batal</a>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan</button>
+                   class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 text-sm font-medium rounded hover:bg-gray-300">
+                    <i class="bi bi-arrow-left me-2"></i>Batal</a>
+                <button type="submit"
+                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700">
+                    <i class="bi bi-save me-2"></i> Simpan
+                </button>
             </div>
         </form>
     </div>
