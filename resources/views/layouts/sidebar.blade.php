@@ -68,12 +68,18 @@
                     </x-slot>
                 </x-dropdown>
 
-                <a href="dashboard" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-house me-1">
+                <a href="{{ route('dashboard') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
+                        class="bi bi-house me-1">
                     </i> Beranda</a>
-                <a href="products" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-box me-1">
+                <a href="{{ route('products.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
+                        class="bi bi-box me-1">
                     </i> Produk</a>
-                <a href="categories" class="block px-4 py-2 rounded hover:bg-gray-200"><i class="bi bi-tags me-1">
+                <a href="{{ route('categories.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
+                        class="bi bi-tags me-1">
                     </i> Kategori</a>
+                <a href="{{ route('units.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
+                        class="bi bi-card-text me-1">
+                    </i> Satuan</a>
 
             </nav>
         </div>
