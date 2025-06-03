@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="w-full mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
                 <i class="bi bi-tags"></i> Daftar Kategori
@@ -32,7 +32,7 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $category->name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-900 flex gap-2">
                                 <a href="{{ route('categories.show', $category->id) }}"
-                                    class="text-gray-600 hover:text-gray-800" title="Detail">
+                                    class="text-yellow-600 hover:text-yellow-800" title="Detail">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 <a href="{{ route('categories.edit', $category->id) }}"

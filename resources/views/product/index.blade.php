@@ -6,7 +6,7 @@
     </x-slot>
 
 
-    <div class="mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="w-full mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
                 <i class="bi bi-box me-1"></i> Daftar Produk

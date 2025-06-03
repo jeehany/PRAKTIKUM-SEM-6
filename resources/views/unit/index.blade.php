@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Daftar Unit</h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
+    <div class="w-full mx-auto sm:px-6 lg:px-8 mt-4">
         <div class="flex justify-between items-center mb-4">
             <h1 class="text-xl font-bold text-gray-800">Unit</h1>
             <a href="{{ route('units.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
