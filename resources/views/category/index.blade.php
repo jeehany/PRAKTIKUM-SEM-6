@@ -7,6 +7,10 @@
 
     <div class="w-full mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
+            <a href="{{ route('categories.print') }}"
+                class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700">
+                <i class="bi bi-printer me-2"></i> Cetak PDF
+            </a>
             <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
                 <i class="bi bi-tags"></i> Daftar Kategori
             </h1>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CategoryController extends Controller
 {
@@ -88,5 +89,12 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')
             ->with('success', 'Kategori berhasil dihapus.');
+    }
+
+    public function print()
+    {
+        $categories = Category::all();
+        $pdf = Pdf::loadView('category.print', compact('categories'));
+        return $pdf->download('daftar-kategori.pdf');
     }
 }
