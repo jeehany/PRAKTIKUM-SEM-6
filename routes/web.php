@@ -20,7 +20,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/products/pdf', [ProductController::class, 'exportPdf'])->name('products.pdf');
     Route::resource('products', ProductController::class);
+    Route::get('/categories/print', [CategoryController::class, 'print'])->name('categories.print');
     Route::resource('categories', CategoryController::class);
     Route::resource('units', UnitController::class);
     Route::get('/customers/print', [CustomerController::class, 'print'])->name('customers.print');

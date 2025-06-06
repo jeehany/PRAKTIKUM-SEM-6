@@ -8,8 +8,13 @@
 
     <div class="w-full mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                <i class="bi bi-box me-1"></i> Daftar Produk
+            <a href="{{ route('products.pdf') }}" target="_blank"
+                class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700">
+                <i class="bi bi-file-earmark-pdf me-2"></i> Cetak PDF
+            </a>
+
+            <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                Daftar Produk
             </h1>
             <a href="{{ route('products.create') }}"
                 class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700">

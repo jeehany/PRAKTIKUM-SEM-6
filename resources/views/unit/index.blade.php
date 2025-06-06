@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Daftar Unit</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Satuan</h2>
     </x-slot>
 
     <div class="w-full mx-auto sm:px-6 lg:px-8 mt-4">
         <div class="flex justify-between items-center mb-4">
-            <h1 class="text-xl font-bold text-gray-800">Unit</h1>
+            <h1 class="text-xl font-bold text-gray-800">Daftar Satuan</h1>
             <a href="{{ route('units.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 <i class="bi bi-plus-circle mr-2"></i>Tambah Unit
             </a>
@@ -27,11 +27,11 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $unit->name }}</td>
                             <td class="px-6 py-4 flex gap-2">
                                 <a href="{{ route('units.show', $unit->id) }}" title="Detail"
-                                    class="text-yellow-600 hover:text-yellow-800">
+                                    class="text-blue-600 hover:text-blue-800">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 <a href="{{ route('units.edit', $unit->id) }}" title="Edit"
-                                    class="text-blue-600 hover:text-blue-800">
+                                    class="text-yellow-600 hover:text-yellow-800">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                                 <form action="{{ route('units.destroy', $unit->id) }}" method="POST"

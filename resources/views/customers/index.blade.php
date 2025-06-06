@@ -1,17 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Customer</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Kustomer</h2>
     </x-slot>
 
     <div class="w-full mx-auto sm:px-6 lg:px-8 py-6">
         <div class="flex justify-between items-center mb-4">
-            <a href="{{ route('customers.print') }}" target="_blank"
-                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-                Cetak PDF
-            </a>
-            <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">Daftar Customer</h1>
+            <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">Daftar Kustomer</h1>
             <a href="{{ route('customers.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Tambah Customer
+                Tambah Kustomer
             </a>
         </div>
 
@@ -37,9 +33,9 @@
                             <td class="px-6 py-4 text-sm">{{ $customer->phone }}</td>
                             <td class="px-6 py-4 text-sm flex space-x-2">
                                 <a href="{{ route('customers.show', $customer->id) }}"
-                                    class="text-yellow-600 hover:underline"><i class="bi bi-eye"></i></a>
+                                    class="text-blue-600 hover:underline"><i class="bi bi-eye"></i></a>
                                 <a href="{{ route('customers.edit', $customer->id) }}"
-                                    class="text-blue-600 hover:underline"><i class="bi bi-pencil-square"></i></a>
+                                    class="text-yellow-600 hover:underline"><i class="bi bi-pencil-square"></i></a>
                                 <form action="{{ route('customers.destroy', $customer->id) }}" method="POST"
                                     onsubmit="return confirm('Yakin ingin menghapus?')">
                                     @csrf @method('DELETE')

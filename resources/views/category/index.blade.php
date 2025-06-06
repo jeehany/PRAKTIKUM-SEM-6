@@ -7,8 +7,12 @@
 
     <div class="w-full mx-auto py-6 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                <i class="bi bi-tags"></i> Daftar Kategori
+            <a href="{{ route('categories.print') }}"
+                class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700">
+                <i class="bi bi-file-earmark-pdf me-2"></i> Cetak PDF
+            </a>
+            <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                Daftar Kategori
             </h1>
             <a href="{{ route('categories.create') }}"
                 class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700">
@@ -32,11 +36,11 @@
                             <td class="px-6 py-4 text-sm text-gray-900">{{ $category->name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-900 flex gap-2">
                                 <a href="{{ route('categories.show', $category->id) }}"
-                                    class="text-yellow-600 hover:text-yellow-800" title="Detail">
+                                    class="text-blue-600 hover:text-blue-800" title="Detail">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 <a href="{{ route('categories.edit', $category->id) }}"
-                                    class="text-blue-600 hover:text-blue-800" title="Edit">
+                                    class="text-yellow-600 hover:text-yellow-800" title="Edit">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                                 <button type="button" onclick="deleteCategory({{ $category->id }})"

@@ -81,7 +81,7 @@
                         class="bi bi-card-text me-1">
                     </i> Satuan</a>
                 <a href="{{ route('customers.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
-                        class="bi bi-person me-1">
+                        class="bi bi-people me-1">
                     </i> Kustomer</a>
                 <a href="{{ route('users.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200"><i
                         class="bi bi-person me-1">

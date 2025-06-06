@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -110,5 +111,12 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('products.index')->with(['success' => 'Produk berhasil dihapus!']);
+    }
+
+    public function exportPdf()
+    {
+        $products = Product::all();
+        $pdf = Pdf::loadView('product.print', compact('products'));
+        return $pdf->stream('daftar-produk.pdf');
     }
 }
