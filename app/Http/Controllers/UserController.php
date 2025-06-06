@@ -111,7 +111,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $pdf = Pdf::loadView('users.print', compact('users'))->setPaper('a4', 'portrait');
-        return $pdf->download('daftar-pengguna.pdf');
+        return $pdf->stream('daftar-pengguna.pdf');
     }
 
     public function exportExcel()
