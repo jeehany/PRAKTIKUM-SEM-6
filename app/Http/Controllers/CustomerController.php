@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CustomerController extends Controller
 {
@@ -68,5 +69,11 @@ class CustomerController extends Controller
         $customer->delete();
 
         return redirect()->route('customers.index')->with('success', 'Customer berhasil dihapus.');
+    }
+    public function print()
+    {
+        $customers = Customer::all();
+        $pdf = Pdf::loadView('customers.print', compact('customers'));
+        return $pdf->download('daftar-customer.pdf');
     }
 }

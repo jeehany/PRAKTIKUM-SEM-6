@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/categories/print', [CategoryController::class, 'print'])->name('categories.print');
     Route::resource('categories', CategoryController::class);
     Route::resource('units', UnitController::class);
+    Route::get('/customers/print', [CustomerController::class, 'print'])->name('customers.print');
     Route::resource('customers', CustomerController::class);
 });
 

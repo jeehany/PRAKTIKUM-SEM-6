@@ -5,6 +5,10 @@
 
     <div class="w-full mx-auto sm:px-6 lg:px-8 py-6">
         <div class="flex justify-between items-center mb-4">
+            <a href="{{ route('customers.print') }}" target="_blank"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                Cetak PDF
+            </a>
             <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">Daftar Customer</h1>
             <a href="{{ route('customers.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 Tambah Customer
